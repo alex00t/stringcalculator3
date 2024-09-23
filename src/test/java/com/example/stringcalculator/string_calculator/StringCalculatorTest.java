@@ -23,5 +23,11 @@ public class StringCalculatorTest {
 	        StringCalculator calculator = new StringCalculator();
 	        assertEquals(3, calculator.addSum("1,2"));
 	    }
+	  
+	  @Test
+	    public void testAdd_NewLinesBetweenNumbers_ReturnsSum() {
+	        StringCalculator calculator = new StringCalculator();
+	        assertEquals(6, calculator.handleCommasNewLine("1\n2,3"));
+	    }
 }
 
