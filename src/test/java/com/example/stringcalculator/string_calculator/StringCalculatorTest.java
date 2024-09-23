@@ -29,5 +29,11 @@ public class StringCalculatorTest {
 	        StringCalculator calculator = new StringCalculator();
 	        assertEquals(6, calculator.handleCommasNewLine("1\n2,3"));
 	    }
+	  
+	  @Test
+	    public void testAdd_CustomDelimiter_ReturnsSum() {
+	        StringCalculator calculator = new StringCalculator();
+	        assertEquals(3, calculator.addDelimiters("//;\n1;2"));
+	    }
 }
 
