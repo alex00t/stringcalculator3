@@ -6,6 +6,10 @@ import static org.junit.Assert.*;
 public class StringCalculatorTest {
 
   
-
+	  @Test
+	    public void testAdd_EmptyString_ReturnsZero() {
+	        StringCalculator calculator = new StringCalculator();
+	        assertEquals(0, calculator.add(""));
+	    }
 }
 
