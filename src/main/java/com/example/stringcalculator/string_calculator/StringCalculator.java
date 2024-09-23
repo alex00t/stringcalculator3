@@ -1,5 +1,7 @@
 package com.example.stringcalculator.string_calculator;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class StringCalculator {
 	
@@ -56,6 +58,32 @@ public class StringCalculator {
 		    int sum = 0;
 		    for (String part : parts) {
 		        sum += Integer.parseInt(part);
+		    }
+		    
+		    return sum;
+		}
+
+	 public int handelException (String numbers) {
+		    String delimiter = ",|\n";
+		    if (numbers.startsWith("//")) {
+		        int delimiterIndex = numbers.indexOf("\n");
+		        delimiter = numbers.substring(2, delimiterIndex);
+		        numbers = numbers.substring(delimiterIndex + 1);
+		    }
+		    
+		    String[] parts = numbers.split(delimiter);
+		    int sum = 0;
+		    List<Integer> negatives = new ArrayList<Integer>();  // Explicit type declaration
+		    for (String part : parts) {
+		        int number = Integer.parseInt(part);
+		        if (number < 0) {
+		            negatives.add(number);
+		        }
+		        sum += number;
+		    }
+		    
+		    if (!negatives.isEmpty()) {
+		        throw new IllegalArgumentException("Negative numbers not allowed: " + negatives);
 		    }
 		    
 		    return sum;

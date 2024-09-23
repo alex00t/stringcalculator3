@@ -35,5 +35,11 @@ public class StringCalculatorTest {
 	        StringCalculator calculator = new StringCalculator();
 	        assertEquals(3, calculator.addDelimiters("//;\n1;2"));
 	    }
+	  
+	  @Test(expected = IllegalArgumentException.class)
+	    public void testAdd_NegativeNumbers_ThrowsException() {
+	        StringCalculator calculator = new StringCalculator();
+	        calculator.handelException("1,-2,3");
+	    }
 }
 
