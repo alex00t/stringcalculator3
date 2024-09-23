@@ -18,4 +18,14 @@ public class StringCalculator {
 		    }
 		    return -1;  
 		}
+	 
+	 public int addSum (String numbers) {
+		    if (numbers.isEmpty()) {
+		        return 0;
+		    } else if (numbers.contains(",")) {
+		        String[] parts = numbers.split(",");
+		        return Integer.parseInt(parts[0]) + Integer.parseInt(parts[1]);
+		    }
+		    return Integer.parseInt(numbers);
+		}
 }

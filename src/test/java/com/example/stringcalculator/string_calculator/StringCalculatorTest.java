@@ -17,5 +17,11 @@ public class StringCalculatorTest {
 	        StringCalculator calculator = new StringCalculator();
 	        assertEquals(1, calculator.addSingleNumber("1"));
 	    }
+	  
+	  @Test
+	    public void testAdd_TwoNumbers_ReturnsSum() {
+	        StringCalculator calculator = new StringCalculator();
+	        assertEquals(3, calculator.addSum("1,2"));
+	    }
 }
 
